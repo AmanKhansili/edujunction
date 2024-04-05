@@ -84,11 +84,7 @@ const CreatePage = () => {
               <Link href="/">
                 <Button type="button">Cancel</Button>
               </Link>
-              <Button
-                type="submit"
-                disabled={!isValid || isSubmitting}
-                className="text-white bg-black"
-              >
+              <Button type="submit" disabled={!isValid || isSubmitting}>
                 Continue
               </Button>
             </div>
