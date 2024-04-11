@@ -16,11 +16,11 @@ generator client {
 
 
 model Course{
-  id String @map("_id") @default(uuid())@id
-  userId  String
-  title String 
-  description String? 
-  imageUrl String? 
+  id String @id @default(uuid())
+  userId String
+  title String @db.Text
+  description String? @db.Text
+  imageUrl String? @db.Text
   price Float?
   isPublished Boolean @default(false)
 
@@ -35,22 +35,21 @@ model Course{
 }
 
 model Category{
-  id String @map("_id") @default(uuid())@id
+  id String @id @default(uuid())
   name String @unique
   courses Course[]
 }
 
 model Attachment{
-  id String @map("_id") @default(uuid())@id
+  id String @id @default(uuid())
   name String
-  url String
+  url String @db.Text
 
   courseId String
   course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
-  
+
   createdAt DateTime @default(now())
-  updateAt DateTime @updatedAt
-  
-  
+  updatedAt DateTime @updatedAt
+
   @@index([courseId])
 }
