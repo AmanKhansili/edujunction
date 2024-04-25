@@ -6,6 +6,62 @@ import { db } from "@/lib/db";
 
 const mux = new Mux(process.env.MUX_TOKEN_ID!, process.env.MUX_TOKEN_SECRET!);
 
+export async function DELETE(
+  req: Request,
+  { params }: { params: { courseId: string; chapterId: string } }
+) {
+  try {
+    const { userId } = auth();
+
+    if (!userId) {
+      return new NextResponse("Unauthorized", { status: 401 });
+    }
+
+    const course = await db.course.findUnique({
+      where: {
+        id: params.courseId,
+        userId: userId,
+      },
+      include: {
+        chapters: {
+          where: {
+            id: params.chapterId,
+          },
+          include: {
+            muxData: true,
+          },
+        },
+      },
+    });
+
+    if (!course?.chapters?.length) {
+      return new NextResponse("Not found", { status: 404 });
+    }
+
+    const chapterToDelete = course.chapters[0]; // Assuming only one chapter matches the ID
+
+    if (chapterToDelete.muxData?.assetId) {
+      await mux.video.assets.delete(chapterToDelete.muxData.assetId);
+
+      await db.muxData.delete({
+        where: {
+          id: chapterToDelete.muxData.id,
+        },
+      });
+    }
+
+    await db.chapter.delete({
+      where: {
+        id: params.chapterId,
+      },
+    });
+
+    return NextResponse.json({ message: "Chapter deleted" });
+  } catch (error) {
+    console.log("[CHAPTER_ID_DELETE]", error);
+    return new NextResponse("Internal Error", { status: 500 });
+  }
+}
 export async function PATCH(
   req: Request,
   { params }: { params: { courseId: string; chapterId: string } }
