@@ -14,13 +14,16 @@
     "@hookform/resolvers": "^3.3.4",
     "@mux/mux-node": "^8.5.0",
     "@mux/mux-player-react": "^2.5.0",
-    "@prisma/client": "^5.12.1",
+    "@prisma/client": "^5.13.0",
     "@radix-ui/react-alert-dialog": "^1.0.5",
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-progress": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
+    "@tanstack/react-table": "^8.16.0",
     "@types/node": "20.11.28",
     "@types/react": "18.2.66",
     "@types/react-dom": "18.2.22",
@@ -37,12 +40,16 @@
     "mongodb": "^6.5.0",
     "next": "^14.1.4",
     "postcss": "8.4.35",
+    "query-string": "^9.0.0",
     "react": "18.2.0",
     "react-confetti": "^6.1.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.51.1",
     "react-hot-toast": "^2.4.1",
+    "react-icons": "^5.1.0",
     "react-quill": "^2.0.0",
+    "recharts": "^2.12.6",
+    "stripe": "^15.4.0",
     "tailwind-merge": "^2.2.2",
     "tailwindcss": "3.4.1",
     "tailwindcss-animate": "^1.0.7",
@@ -53,6 +60,6 @@
   },
   "devDependencies": {
     "@swc/core": "^1.4.12",
-    "prisma": "^5.12.1"
+    "prisma": "^5.13.0"
   }
 }

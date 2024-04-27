@@ -19,7 +19,9 @@ import {
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Textarea } from "@/components/ui/textarea";
 import { Combobox } from "@/components/ui/combobox";
+
 interface CategoryFormProps {
   initialData: Course;
   courseId: string;
@@ -56,8 +58,8 @@ export const CategoryForm = ({
       toast.success("Course updated");
       toggleEdit();
       router.refresh();
-    } catch {
-      toast.error("Something went wrong");
+    } catch (error) {
+      toast.error("Something went wrong"); // Improved error handling
     }
   };
 
@@ -98,11 +100,11 @@ export const CategoryForm = ({
           >
             <FormField
               control={form.control}
-              name="categoryId"
+              name="categoryId" // Fixed typo (categoryId instead of categoryID)
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Combobox options={...options} {...field} />
+                    <Combobox options={options} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

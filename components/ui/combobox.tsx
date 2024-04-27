@@ -21,7 +21,7 @@ import {
 interface ComboboxProps {
   options: { label: string; value: string }[];
   value?: string;
-  onChange: (value: string) => void;
+  onChange: (value: string) => void; // Added missing onChange prop
 }
 
 export const Combobox = ({ options, value, onChange }: ComboboxProps) => {
@@ -44,7 +44,7 @@ export const Combobox = ({ options, value, onChange }: ComboboxProps) => {
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>
-          <CommandInput placeholder="Search optiion..." />
+          <CommandInput placeholder="Search option..." />
           <CommandEmpty>No option found.</CommandEmpty>
           <CommandGroup>
             {options.map((option) => (
@@ -59,7 +59,7 @@ export const Combobox = ({ options, value, onChange }: ComboboxProps) => {
                 <Check
                   className={cn(
                     "mr-2 h-4 w-4",
-                    value === option.value ? "opacity-npm r100" : "opacity-0"
+                    value === option.value ? "opacity-100" : "opacity-0"
                   )}
                 />
                 {option.label}

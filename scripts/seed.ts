@@ -4,17 +4,23 @@ const database = new PrismaClient();
 
 async function main() {
   try {
+    const categoryNames = [
+      "Computer Science",
+      "Music",
+      "Fitness",
+      "Photography",
+      "Accounting",
+      "Engineering",
+    ];
+    const uniqueCategories = categoryNames.map((name) => ({
+      name: `${name} Course`,
+    })); // Add a suffix for uniqueness
+
     await database.category.createMany({
-      data: [
-        { name: "Computer Science" },
-        { name: "Music" },
-        { name: "Fitness" },
-        { name: "Photography" },
-        { name: "Accounting" },
-        { name: "Engineering" },
-        { name: "Filming" },
-      ],
+      data: uniqueCategories,
     });
+
+    console.log("Success");
   } catch (error) {
     console.log("Error seeding the database categories", error);
   } finally {
