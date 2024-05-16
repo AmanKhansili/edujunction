@@ -1,0 +1,93 @@
+Seed Combobox and category change 26/4/24 7:30
+
+You are using Node.js 18.12.1. For Next.js 14, Node.js version >= v18.17.0 is required.
+next.js 14.1.3
+node --version  v20.11.1
+npx stands for "Node Package Runner".
+npm(Node Package Manager) -v 9.6.2
+1. npx create-next-app@13.4.12 edujunction --typescript --tailwind --eslint
+2. npx shadcn-ui@latest init
+
+Clerk sign in and npm i @clerk/nextjs
+npx shadcn-ui@latest add sheet
+npx shadcn-ui@latest add form
+npx shadcn-ui@latest add input
+
+npm i axios;
+
+*****
+Prisma is a modern DB toolkit to query, migrate and model your database (https://prisma.io)
+
+Usage
+
+  $ prisma [command]
+
+Commands
+
+            init   Set up Prisma for your app
+        generate   Generate artifacts (e.g. Prisma Client)
+              db   Manage your database schema and lifecycle
+         migrate   Migrate your database
+          studio   Browse your data with Prisma Studio
+        validate   Validate your Prisma schema
+          format   Format your Prisma schema
+         version   Displays Prisma version info
+           debug   Displays Prisma debug info
+
+Flags
+
+     --preview-feature   Run Preview Prisma commands
+     --help, -h          Show additional information about a command
+
+Examples
+
+  Set up a new Prisma project
+  $ prisma init
+
+  Generate artifacts (e.g. Prisma Client)
+  $ prisma generate
+
+  Browse your data
+  $ prisma studio
+
+  Create migrations from your Prisma schema, apply them to the database, generate artifacts (e.g. Prisma Client)
+  $ prisma migrate dev
+
+  Pull the schema from an existing database, updating the Prisma schema
+  $ prisma db pull
+
+  Push the Prisma schema state to the database
+  $ prisma db push
+
+  Validate your Prisma schema
+  $ prisma validate
+
+  Format your Prisma schema
+  $ prisma format
+
+  Display Prisma version info
+  $ prisma version
+
+  Display Prisma debug info
+  $ prisma debug
+****
+
+MUX.com for video upload
+Extentions:npm i @mux/mux-node , npm i @mux/mux-player-react 
+
+*****        **********
+Listen to Stripe events
+
+Test in a local environment
+
+Use Stripe CLI to simulate Stripe events in your local environment or learn more about Webhooks.
+
+step 1:- Download the CLI and log in with your Stripe account
+
+stripe login
+Logged in on DESKTOP-M84D62T
+
+step 2
+Forward events to your webhook
+stripe listen --forward-to localhost:3000/api/webhook
+
