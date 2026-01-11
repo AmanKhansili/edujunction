@@ -28,7 +28,7 @@
     "@types/node": "20.11.28",
     "@types/react": "18.2.66",
     "@types/react-dom": "18.2.22",
-    "@uploadthing/react": "^6.4.1",
+    "@uploadthing/react": "^7.3.3",
     "autoprefixer": "10.4.18",
     "axios": "^1.6.8",
     "class-variance-authority": "^0.7.0",
@@ -55,7 +55,7 @@
     "tailwindcss": "3.4.1",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "5.4.2",
-    "uploadthing": "^6.7.0",
+    "uploadthing": "^7.7.4",
     "zod": "^3.22.4",
     "zustand": "^4.5.2"
   },
